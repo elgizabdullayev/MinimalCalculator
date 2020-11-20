@@ -16,37 +16,69 @@ class ViewController: UIViewController {
         
     }
     
+    var right = false
     @IBOutlet weak var Result: UILabel!
     
     @IBAction func Calculate(_ sender: UIButton) {
+        
         switch (sender.tag){
         case 100:
-            if Result.text! != ""
+            switch Result.text?.last!{
+            case "/" , "*", "+", "-", "." :
+                right = true
+            default : right = false}
+            if Result.text! != "" && right == false
             {
-                Result.text = Result.text! + "+"}
+                Result.text = Result.text! + "+"
+                
+            }
             
         case 101:
-            if Result.text! != ""
+            switch Result.text?.last!{
+            case "/" , "*", "+", "-", "." :
+                right = true
+            default : right = false}
+            if Result.text! != "" && right == false
             {
-                Result.text = Result.text! + "-"}
+                Result.text = Result.text! + "-"
+                
+            }
            
         case 102:
-            if Result.text! != ""
+            switch Result.text?.last!{
+            case "/" , "*", "+", "-", "." :
+                right = true
+            default : right = false}
+            if Result.text! != "" && right == false
             {
-                Result.text = Result.text! + "/"}
+                Result.text = Result.text! + "/"
+                
+            }
             
         case 104:
            
             Result.text = ""
         case 103:
-            if Result.text! != ""
+            switch Result.text?.last!{
+            case "/" , "*", "+", "-", "." :
+                right = true
+            default : right = false}
+            if Result.text! != "" && right == false
             {
-                Result.text = Result.text! + "*"}
+                Result.text = Result.text! + "*"
+                
+            }
             
         case 105:
-            if Result.text! != ""
+            switch Result.text?.last!{
+            case "/" , "*", "+", "-", "." :
+                right = true
+            default : right = false}
+            if Result.text! != "" && right == false
             {
-                Result.text = Result.text! + "."}
+                Result.text = Result.text! + "."
+                
+            }
             
         case 107:
             if Result.text! != ""
@@ -62,6 +94,6 @@ class ViewController: UIViewController {
                 Result.text = "Error"
             }
         }
+        
+        }
     }
-}
-
