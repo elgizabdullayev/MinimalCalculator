@@ -119,7 +119,7 @@ class ViewController: UIViewController {
             let result = calculate.expressionValue(with: nil, context: nil) as? Double
                 
             Result.text = String(result!)
-                temp = ""
+                temp = String(result!)
                 error = false
             }
             
